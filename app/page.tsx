@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 /* ─── Asset URLs ──────────────────────────────────────────── */
 const ASSETS = {
@@ -244,11 +245,11 @@ export default function HomePage() {
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white dark:from-[#0c1120] dark:via-[#0f1728] dark:to-[#1a1f2f] pt-[68px]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/assets/home/home_hero.webp"
-          alt=""
-          loading="lazy"
+          alt="Home Hero"
+          fill
+          priority
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-white/10 dark:from-[#0c1120]/85 dark:via-[#0c1120]/45 dark:to-[#0c1120]/5" />
