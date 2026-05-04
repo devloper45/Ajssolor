@@ -152,14 +152,14 @@ const CTA_BULLETS = [
 /* ── ProductCard ─────────────────────────────────────────────── */
 function ProductCard({ product }: { product: Product }) {
   return (
-    <div className={`bg-white border overflow-hidden rounded-xl flex flex-col transition-shadow hover:shadow-lg ${
+    <div className={`bg-white dark:bg-[#0f172a] border dark:border-white/10 overflow-hidden rounded-xl flex flex-col transition-shadow hover:shadow-lg ${
       product.featured
-        ? "border-[#efaf0a]/20 shadow-sm"
-        : "border-black/5 shadow-sm"
+        ? "border-[#efaf0a]/20 dark:border-[#efaf0a]/40 shadow-sm"
+        : "border-black/5 dark:border-white/10 shadow-sm"
     }`}>
       {/* Image area */}
-      <div className="bg-[#f3f4f6] h-[220px] sm:h-[256px] flex items-center justify-center rounded-t-xl overflow-hidden flex-shrink-0">
-        <span className="text-[#9ca3af] text-sm font-medium">{product.brand}</span>
+      <div className="bg-[#f3f4f6] dark:bg-[#0b1220] h-[220px] sm:h-[256px] flex items-center justify-center rounded-t-xl overflow-hidden flex-shrink-0">
+        <span className="text-[#9ca3af] dark:text-[#9fb2c8] text-sm font-medium">{product.brand}</span>
       </div>
 
       {/* Featured gold top border */}
@@ -172,11 +172,11 @@ function ProductCard({ product }: { product: Product }) {
         {/* Brand + badge */}
         <div className="flex items-start justify-between gap-2">
           <div className="flex flex-col gap-1">
-            <span className="text-[#006689] text-xs font-semibold uppercase tracking-[1.2px]">
+            <span className="text-[#006689] dark:text-[#7dd3fc] text-xs font-semibold uppercase tracking-[1.2px]">
               {product.brand}
             </span>
             <h3
-              className="text-[#111827] text-lg sm:text-xl font-bold leading-tight"
+              className="text-[#111827] dark:text-white text-lg sm:text-xl font-bold leading-tight"
               style={{ fontFamily: "var(--font-manrope, Manrope, sans-serif)" }}
             >
               {product.name}
@@ -194,8 +194,8 @@ function ProductCard({ product }: { product: Product }) {
         <div className="flex flex-col gap-3">
           {product.specs.map((spec) => (
             <div key={spec.label} className="flex items-center justify-between">
-              <span className="text-[#6b7280] text-sm">{spec.label}</span>
-              <span className="text-[#111827] text-sm font-semibold">{spec.value}</span>
+              <span className="text-[#6b7280] dark:text-[#94a3b8] text-sm">{spec.label}</span>
+              <span className="text-[#111827] dark:text-[#e2e8f0] text-sm font-semibold">{spec.value}</span>
             </div>
           ))}
         </div>
@@ -203,7 +203,7 @@ function ProductCard({ product }: { product: Product }) {
         {/* Price */}
         <div className="pt-4 mt-auto">
           <p
-            className="text-[#111827] text-2xl font-semibold"
+            className="text-[#111827] dark:text-white text-2xl font-semibold"
             style={{ fontFamily: "var(--font-inter, Inter, sans-serif)" }}
           >
             {product.price}
@@ -215,7 +215,7 @@ function ProductCard({ product }: { product: Product }) {
           <button className="bg-[#efaf0a] hover:bg-[#d99e09] text-[#271900] text-sm font-semibold py-3 rounded-lg transition-colors">
             Get Quote
           </button>
-          <button className="bg-[#f3f4f6] hover:bg-[#e5e7eb] text-[#111827] text-sm font-semibold py-3 rounded-lg transition-colors">
+          <button className="bg-[#f3f4f6] dark:bg-[#101827] hover:bg-[#e5e7eb] dark:hover:bg-[#172233] text-[#111827] dark:text-[#e2e8f0] text-sm font-semibold py-3 rounded-lg transition-colors">
             Details
           </button>
         </div>
@@ -233,7 +233,7 @@ export default function ProductsPage() {
     : PRODUCTS.filter((p) => p.category === activeCategory);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-[#0b0f1a] min-h-screen">
 
       {/* ─── Hero ──────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
@@ -245,18 +245,25 @@ export default function ProductsPage() {
               "linear-gradient(90deg, #f6f6f6 0%, rgba(224,224,224,0.8) 50%, rgba(255,255,255,0) 100%)",
           }}
         />
+        <div
+          className="absolute inset-0 pointer-events-none hidden dark:block"
+          style={{
+            background:
+              "linear-gradient(90deg, #0b0f1a 0%, rgba(15,23,42,0.9) 50%, rgba(15,23,42,0) 100%)",
+          }}
+        />
 
         <div className="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-6">
           {/* Badge */}
           <div className="inline-flex items-center bg-[rgba(0,102,137,0.1)] px-4 py-1.5 rounded-full">
-            <span className="text-[#006689] text-xs font-semibold uppercase tracking-[1.2px]">
+            <span className="text-[#006689] dark:text-[#7dd3fc] text-xs font-semibold uppercase tracking-[1.2px]">
               Premium Hardware
             </span>
           </div>
 
           {/* Heading */}
           <h1
-            className="text-4xl sm:text-5xl lg:text-[72px] font-extrabold leading-tight text-[#111827]"
+            className="text-4xl sm:text-5xl lg:text-[72px] font-extrabold leading-tight text-[#111827] dark:text-white"
             style={{ fontFamily: "var(--font-manrope, Manrope, sans-serif)", lineHeight: 1 }}
           >
             High-Quality Solar{" "}
@@ -266,7 +273,7 @@ export default function ProductsPage() {
           </h1>
 
           {/* Sub-heading */}
-          <p className="text-[#4b5563] text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mt-2">
+          <p className="text-[#4b5563] dark:text-[#cbd5f5] text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mt-2">
             Explore premium solar panels, inverters, batteries, and accessories from top global
             brands curated for maximum efficiency.
           </p>
@@ -295,7 +302,7 @@ export default function ProductsPage() {
       {/* ─── Sticky Filter Bar ─────────────────────────────────── */}
       <div
         id="products"
-        className="sticky top-[73px] z-40 bg-white/80 backdrop-blur-md border-y border-[#f3f4f6] px-4 sm:px-6 lg:px-8 py-3"
+        className="sticky top-[73px] z-40 bg-white/80 dark:bg-[#0b0f1a]/80 backdrop-blur-md border-y border-[#f3f4f6] dark:border-white/10 px-4 sm:px-6 lg:px-8 py-3"
       >
         <div className="max-w-[1280px] mx-auto flex items-center justify-between gap-4">
           {/* Category tabs — scrollable on mobile */}
@@ -307,7 +314,7 @@ export default function ProductsPage() {
                 className={`flex-shrink-0 px-5 sm:px-6 py-2 rounded-full text-sm sm:text-base font-semibold transition-all ${
                   activeCategory === cat
                     ? "bg-[#efaf0a] text-[#271900] shadow-sm"
-                    : "text-[#6b7280] hover:text-[#111827] font-medium"
+                    : "text-[#6b7280] dark:text-[#9fb2c8] hover:text-[#111827] dark:hover:text-white font-medium"
                 }`}
                 style={{ fontFamily: "var(--font-inter, Inter, sans-serif)" }}
               >
@@ -317,7 +324,7 @@ export default function ProductsPage() {
           </div>
 
           {/* Product count */}
-          <div className="flex-shrink-0 flex items-center gap-2 text-[#9ca3af] text-sm">
+          <div className="flex-shrink-0 flex items-center gap-2 text-[#9ca3af] dark:text-[#8fa3bf] text-sm">
             <img src={ASSETS.sortIcon} alt="" className="w-[10.5px] h-[7px]" />
             <span>{filtered.length} Products Found</span>
           </div>
@@ -333,14 +340,14 @@ export default function ProductsPage() {
             ))}
           </div>
         ) : (
-          <p className="text-center text-[#6b7280] py-20 text-lg">
+          <p className="text-center text-[#6b7280] dark:text-[#9fb2c8] py-20 text-lg">
             No products found in this category.
           </p>
         )}
       </section>
 
       {/* ─── Featured Brands ────────────────────────────────────── */}
-      <section className="bg-[#f9fafb] px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section className="bg-[#f9fafb] dark:bg-[#0f172a] px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="max-w-[1280px] mx-auto flex flex-col gap-12">
           <p className="text-[#efaf0a] text-xs font-semibold uppercase tracking-[3.6px] text-center">
             Trusted by Leading Global Solar Brands
@@ -349,7 +356,7 @@ export default function ProductsPage() {
             {BRANDS.map((brand) => (
               <span
                 key={brand}
-                className="text-[#111827] text-xl sm:text-2xl font-bold"
+                className="text-[#111827] dark:text-[#e2e8f0] text-xl sm:text-2xl font-bold"
                 style={{ fontFamily: "var(--font-manrope, Manrope, sans-serif)" }}
               >
                 {brand}
@@ -366,7 +373,7 @@ export default function ProductsPage() {
           {/* Left — feature list */}
           <div className="flex flex-col gap-12">
             <h2
-              className="text-3xl sm:text-4xl font-bold text-[#111827] leading-snug"
+              className="text-3xl sm:text-4xl font-bold text-[#111827] dark:text-white leading-snug"
               style={{ fontFamily: "var(--font-manrope, Manrope, sans-serif)" }}
             >
               Engineering Excellence in{" "}
@@ -378,7 +385,7 @@ export default function ProductsPage() {
             <div className="flex flex-col gap-10">
               {WHY_FEATURES.map((feat) => (
                 <div key={feat.title} className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[rgba(0,102,137,0.1)] rounded-full flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[rgba(0,102,137,0.1)] dark:bg-[rgba(125,211,252,0.12)] rounded-full flex items-center justify-center">
                     <img
                       src={feat.icon}
                       alt=""
@@ -387,10 +394,10 @@ export default function ProductsPage() {
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <h4 className="text-[#111827] text-lg font-semibold">
+                    <h4 className="text-[#111827] dark:text-white text-lg font-semibold">
                       {feat.title}
                     </h4>
-                    <p className="text-[#4b5563] text-base leading-relaxed">
+                    <p className="text-[#4b5563] dark:text-[#cbd5f5] text-base leading-relaxed">
                       {feat.desc}
                     </p>
                   </div>
@@ -402,24 +409,24 @@ export default function ProductsPage() {
           {/* Right — stat cards */}
           <div className="grid grid-cols-2 gap-6">
             {/* Stat card 1 */}
-            <div className="bg-[#f9fafb] border border-[#f3f4f6] rounded-2xl p-8 flex flex-col justify-end min-h-[250px] sm:min-h-[272px]">
+            <div className="bg-[#f9fafb] dark:bg-[#0f172a] border border-[#f3f4f6] dark:border-white/10 rounded-2xl p-8 flex flex-col justify-end min-h-[250px] sm:min-h-[272px]">
               <p
                 className="text-[#efaf0a] text-4xl sm:text-5xl font-semibold mb-2"
                 style={{ fontFamily: "var(--font-inter, Inter, sans-serif)" }}
               >
                 99%
               </p>
-              <p className="text-[#4b5563] text-sm font-medium leading-relaxed">
+              <p className="text-[#4b5563] dark:text-[#cbd5f5] text-sm font-medium leading-relaxed">
                 Compatible with local grid needs
               </p>
             </div>
 
             {/* Stat card 2 */}
-            <div className="bg-[rgba(239,175,10,0.1)] rounded-2xl p-8 flex flex-col justify-end min-h-[250px] sm:min-h-[272px]">
+            <div className="bg-[rgba(239,175,10,0.1)] dark:bg-[rgba(234,179,8,0.12)] rounded-2xl p-8 flex flex-col justify-end min-h-[250px] sm:min-h-[272px]">
               <div className="mb-4">
                 <img src={ASSETS.starRating} alt="" className="h-7 object-contain" />
               </div>
-              <p className="text-[#111827] text-base font-semibold">
+              <p className="text-[#111827] dark:text-white text-base font-semibold">
                 Expert Installation Support
               </p>
             </div>
@@ -429,12 +436,12 @@ export default function ProductsPage() {
 
       {/* ─── Mini CTA ───────────────────────────────────────────── */}
       <section className="px-4 sm:px-6 lg:px-8 py-4 pb-16 sm:pb-24">
-        <div className="max-w-[1024px] mx-auto rounded-3xl backdrop-blur-md bg-[rgba(73,198,255,0.1)] border border-[rgba(73,198,255,0.2)] shadow-sm p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div className="max-w-[1024px] mx-auto rounded-3xl backdrop-blur-md bg-[rgba(73,198,255,0.1)] dark:bg-[rgba(30,58,138,0.22)] border border-[rgba(73,198,255,0.2)] dark:border-[rgba(96,165,250,0.25)] shadow-sm p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex flex-col gap-2">
-            <h3 className="text-[#111827] text-xl sm:text-2xl font-semibold">
+            <h3 className="text-[#111827] dark:text-white text-xl sm:text-2xl font-semibold">
               Not Sure Which Product is Right for You?
             </h3>
-            <p className="text-[#4b5563] text-base leading-relaxed max-w-lg">
+            <p className="text-[#4b5563] dark:text-[#cbd5f5] text-base leading-relaxed max-w-lg">
               Our engineers can help design the perfect system for your energy load.
             </p>
           </div>

@@ -215,9 +215,16 @@ export default function AboutPage() {
     <div className="bg-white dark:bg-[#1a1f2f]">
 
       {/* ── 1. Hero ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden min-h-[640px] flex items-center pt-20">
+      <section
+        className="relative overflow-hidden min-h-[640px] flex items-center pt-20"
+        style={{
+          backgroundImage: "url('/assets/about_img/about_hero.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f2f2f2] via-[#e0e0e0]/80 to-white dark:from-[#1a1f2f] dark:via-[#1a1f2f]/80 dark:to-[#1a1f2f]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f2f2f2] via-[#e0e0e0]/50 to-white/10 dark:from-[#1a1f2f] dark:via-[#1a1f2f]/60 dark:to-[#1a1f2f]/10" />
         {/* Corner amber glow */}
         <div className="absolute -top-24 -right-24 size-96 bg-[rgba(123,88,0,0.1)] rounded-full blur-[60px] pointer-events-none" />
 
@@ -435,59 +442,49 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── 4. Team Section ──────────────────────────────────── */}
+      {/* ── 4. CEO Message ──────────────────────────────────── */}
       <section className="bg-[#f9fafb] dark:bg-[#141928] px-6 py-24">
-        <div className="max-w-[1280px] mx-auto flex flex-col gap-16">
-
-          {/* Heading */}
-          <div className="flex flex-col items-center gap-3">
-            <h2
-              className="text-[#171717] dark:text-white font-bold text-4xl text-center"
-              style={{ fontFamily: "var(--font-manrope, Manrope, sans-serif)" }}
-            >
-              Meet Our Visionaries
-            </h2>
-            <p
-              className="text-[#525252] dark:text-gray-400 text-base text-center"
+        <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div
+            className="aspect-[4/5] w-full rounded-2xl bg-[#e5e7eb] dark:bg-[#232940] flex items-center justify-center text-[#6b7280] dark:text-[#9ca3af]"
+            role="img"
+            aria-label="CEO portrait (coming soon)"
+          >
+            <span
+              className="text-sm font-semibold tracking-[0.12em] uppercase"
               style={{ fontFamily: "var(--font-inter, sans-serif)" }}
             >
-              The experts behind Pakistan&apos;s most trusted solar infrastructure solutions.
-            </p>
+              CEO Photo
+            </span>
           </div>
 
-          {/* Team cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="bg-white dark:bg-[#1e2540] border border-[#f5f5f5] dark:border-white/10 rounded-xl p-4 flex flex-col gap-6 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)]"
+          <div className="flex flex-col gap-5">
+            <h2
+              className="text-[#171717] dark:text-white font-bold text-4xl"
+              style={{ fontFamily: "var(--font-manrope, Manrope, sans-serif)" }}
+            >
+              A Message from Our CEO
+            </h2>
+            <p
+              className="text-[#525252] dark:text-gray-400 text-lg leading-[1.7]"
+              style={{ fontFamily: "var(--font-inter, sans-serif)" }}
+            >
+              Welcome to J&amp;S Solar! Our commitment to providing sustainable and efficient solar energy solutions is at the heart of everything we do. We believe in harnessing the power of the sun to create a brighter, cleaner future for all. Thank you for considering J&amp;S Solar for your energy needs.
+            </p>
+            <div>
+              <p
+                className="text-[#111827] dark:text-white font-semibold text-lg"
+                style={{ fontFamily: "var(--font-manrope, Manrope, sans-serif)" }}
               >
-                {/* Avatar placeholder */}
-                <div className="aspect-square rounded-xl bg-[#f5f5f5] dark:bg-[#232940] flex items-center justify-center">
-                  <span
-                    className="text-5xl font-bold"
-                    style={{ color: member.roleColor, fontFamily: "var(--font-manrope, Manrope, sans-serif)" }}
-                  >
-                    {member.initials}
-                  </span>
-                </div>
-                {/* Info */}
-                <div className="px-2 pb-4">
-                  <p
-                    className="font-bold text-xl text-[#171717] dark:text-white mb-1"
-                    style={{ fontFamily: "var(--font-manrope, Manrope, sans-serif)" }}
-                  >
-                    {member.name}
-                  </p>
-                  <p
-                    className="font-semibold text-sm uppercase tracking-[0.7px]"
-                    style={{ color: member.roleColor, fontFamily: "var(--font-inter, sans-serif)" }}
-                  >
-                    {member.role}
-                  </p>
-                </div>
-              </div>
-            ))}
+                Muhammad Jawaid Iqbal Goraya
+              </p>
+              <p
+                className="text-[#6b7280] dark:text-gray-400 text-sm uppercase tracking-[0.18em]"
+                style={{ fontFamily: "var(--font-inter, sans-serif)" }}
+              >
+                Chief Executive Officer
+              </p>
+            </div>
           </div>
         </div>
       </section>

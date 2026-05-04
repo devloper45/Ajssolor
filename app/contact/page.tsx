@@ -97,16 +97,23 @@ export default function ContactPage() {
     <div className="bg-[#faf8ff] dark:bg-[#0c1120]">
 
       {/* ─────────────────────── Hero Section ─────────────────────── */}
-      <section className="relative overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20">
+      <section
+        className="relative overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20"
+        style={{
+          backgroundImage: "url('/assets/contact_img/contact_hero.jpg.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         {/* Gradient overlay */}
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "linear-gradient(to right, #f6f6f6, rgba(224,224,224,0.8) 50%, transparent)" }}
+          style={{ background: "linear-gradient(to right, #f6f6f6, rgba(224,224,224,0.8) 0%, transparent)" }}
           aria-hidden="true"
         />
         <div
           className="absolute inset-0 pointer-events-none hidden dark:block"
-          style={{ background: "linear-gradient(to right, rgba(12,17,32,1), rgba(22,27,43,0.9) 50%, transparent)" }}
+          style={{ background: "linear-gradient(to right, rgba(14,19,34,1) 0%, rgba(14,19,34,0.8) 40%, rgba(14,19,34,0) 100%)" }}
           aria-hidden="true"
         />
 
@@ -489,7 +496,14 @@ export default function ContactPage() {
       </section>
 
       {/* ─────────────────── Final CTA Banner ─────────────────────── */}
-      <section className="bg-[#161b2b] dark:bg-[#0a0f1a] py-24 px-4 sm:px-8">
+      <section
+        className="bg-[#161b2b] dark:bg-[#0a0f1a] py-24 px-4 sm:px-8"
+        style={{
+          backgroundImage: "linear-gradient(rgba(10, 15, 26, 0.6), rgba(10, 15, 26, 0.6)), url('/assets/contact_img/contact_cta.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="max-w-[896px] mx-auto flex flex-col items-center gap-8 text-center">
           <h2
             className="text-white text-[36px] sm:text-[48px] lg:text-[60px] font-extrabold leading-tight lg:leading-[60px]"
