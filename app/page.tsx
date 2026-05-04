@@ -261,7 +261,11 @@ export default function HomePage() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-gray-50 via-white to-white dark:from-[#0c1120] dark:via-[#0f1728] dark:to-[#1a1f2f] pt-[68px]">
         <Image
+        <Image
           src="/assets/home/home_hero.webp"
+          alt="Home Hero"
+          fill
+          priority
           alt="Home Hero"
           fill
           priority
