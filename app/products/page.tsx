@@ -252,14 +252,14 @@ export default function ProductsPage() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(90deg, #f6f6f6 0%, rgba(224,224,224,0.8) 50%, rgba(255,255,255,0) 100%)",
+              "linear-gradient(90deg, #f6f6f6 0%, rgba(224,224,224,0.8) 10%, rgba(255,255,255,0) 100%)",
           }}
         />
         <div
           className="absolute inset-0 pointer-events-none hidden dark:block"
           style={{
             background:
-              "linear-gradient(90deg, #0b0f1a 0%, rgba(15,23,42,0.9) 50%, rgba(15,23,42,0) 100%)",
+              "linear-gradient(90deg, #0b0f1a 0%, rgba(15,23,42,0.9) 10%, rgba(15,23,42,0) 100%)",
           }}
         />
 

@@ -113,7 +113,7 @@ export default function ContactPage() {
         />
         <div
           className="absolute inset-0 pointer-events-none hidden dark:block"
-          style={{ background: "linear-gradient(to right, rgba(14,19,34,1) 0%, rgba(14,19,34,0.8) 40%, rgba(14,19,34,0) 100%)" }}
+          style={{ background: "linear-gradient(to right, rgba(14,19,34,1) 0%, rgba(14,19,34,0.8) 20%, rgba(14,19,34,0) 100%)" }}
           aria-hidden="true"
         />
 
