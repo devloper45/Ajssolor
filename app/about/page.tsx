@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -445,17 +446,15 @@ export default function AboutPage() {
       {/* ── 4. CEO Message ──────────────────────────────────── */}
       <section className="bg-[#f9fafb] dark:bg-[#141928] px-6 py-24">
         <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div
-            className="aspect-[4/5] w-full rounded-2xl bg-[#e5e7eb] dark:bg-[#232940] flex items-center justify-center text-[#6b7280] dark:text-[#9ca3af]"
-            role="img"
-            aria-label="CEO portrait (coming soon)"
-          >
-            <span
-              className="text-sm font-semibold tracking-[0.12em] uppercase"
-              style={{ fontFamily: "var(--font-inter, sans-serif)" }}
-            >
-              CEO Photo
-            </span>
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-[#e5e7eb] dark:bg-[#232940]">
+            <Image
+              src="/assets/contact_img/ajsceov2.jpeg"
+              alt="Muhammad Jawaid Iqbal Goraya, Chief Executive Officer"
+              fill
+              sizes="(min-width: 1024px) 520px, 100vw"
+              className="object-cover"
+              loading="lazy"
+            />
           </div>
 
           <div className="flex flex-col gap-5">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 /* ── Figma MCP asset URLs ─────────────────────────────────────── */
@@ -237,6 +238,15 @@ export default function ProductsPage() {
 
       {/* ─── Hero ──────────────────────────────────────────────── */}
       <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+        <Image
+          src="/assets/product/producthero.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 object-cover"
+          aria-hidden="true"
+        />
         {/* Gradient background */}
         <div
           className="absolute inset-0 pointer-events-none"
